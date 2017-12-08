@@ -3,7 +3,5 @@
 
 
 <p align="center">
-  <video src="http://ol1mlku6x.bkt.clouddn.com/input.mov" controls="controls">
-  
-  </video>
+<img src="http://ol1mlku6x.bkt.clouddn.com/qwe.gif" alt="Coverage Status">
 </p>
