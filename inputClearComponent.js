@@ -9,36 +9,36 @@
 		
 			var target=e.target||e.srcElement;
 			var targetName=target.nodeName.toLowerCase()
-			if(target&&targetName=='input'&&target.nextSibling&&target.nextSibling.className!='clear-text-btn'){
-				//只处理text和password类型
-				if(target.type=="text"||target.type=="password"){
-					//插入清除元素的
-					insertAfter(target,function(btn){
-						initClearTextBtn(btn);//设置清除input value的按钮样式
-					})
-				}
+			//只处理text和password类型
+			if(target.type=="text"||target.type=="password"){	
 
-			}
-			target.addEventListener('blur',function(e){
-				if(!e.target.value&&e.target.nextSibling&&target.nextSibling&&e.target.nextSibling.className=='clear-text-btn'){
-					clearCloseTag(e.target)
-				}
-			});	
-			target.addEventListener('keyup',function(e){
-				
-				if(target.nextSibling.className!='clear-text-btn'){
+				if(target&&targetName=='input'&&target.nextSibling&&target.nextSibling.className!='clear-text-btn'){
 					//插入清除元素的
 					insertAfter(target,function(btn){
 						initClearTextBtn(btn);//设置清除input value的按钮样式
 					})
-				}				
-				if(e.target.value){
-					e.target.nextSibling.style.display="block";
-				}else{
-					e.target.nextSibling.style.display="none";
 				}
-				
-			});
+				target.addEventListener('blur',function(e){
+					if(!e.target.value&&e.target.nextSibling&&target.nextSibling&&e.target.nextSibling.className=='clear-text-btn'){
+						clearCloseTag(e.target)
+					}
+				});	
+				target.addEventListener('keyup',function(e){
+					
+					if(target.nextSibling.className!='clear-text-btn'){
+						//插入清除元素的
+						insertAfter(target,function(btn){
+							initClearTextBtn(btn);//设置清除input value的按钮样式
+						})
+					}				
+					if(e.target.value){
+						e.target.nextSibling.style.display="block";
+					}else{
+						e.target.nextSibling.style.display="none";
+					}
+					
+				});
+			}
 
 		
 		})
